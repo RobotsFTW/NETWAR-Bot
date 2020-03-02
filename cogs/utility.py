@@ -57,8 +57,9 @@ class Utility(commands.Cog):
 
         # give users a link to invite thsi bot to their server
         embed.add_field(name="Invite", value="[Invite link](<Not available>)")
-        await ctx.send(embed=embed)
 
+        embed.add_field(name="GitHub", value="https://github.com/RobotsFTW/NetwarBot")
+        await ctx.send(embed=embed)
 
 
 def setup(bot):
