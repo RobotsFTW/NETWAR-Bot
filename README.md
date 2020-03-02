@@ -1,11 +1,12 @@
 # NETWAR-Bot
 
-This is a discord bot for the NETWAR LAN.
+This is a discord bot for the NETWAR LAN. 
 https://www.netwar.org/
 
-Help command came from here: https://github.com/zedchance/embed_help
+Help command came from here:  
+https://github.com/zedchance/embed_help
 
-Discord bot for the NETWAR LAN.
+Discord bot for the NETWAR LAN written using discord.py api.
 
 
 The bot needs a **config.py** file with all the secret api key stuff in it. Inside will look like this:  
