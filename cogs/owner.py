@@ -11,7 +11,7 @@ def is_me(m):
 
 
 def is_com(m):
-    return m.content.startswith('>')
+    return m.content.startswith(config.bot_prefix)
 
 
 class Owner_Cog(commands.Cog):

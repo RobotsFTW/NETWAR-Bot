@@ -5,10 +5,12 @@ import config
 
 
 initial_extensions = ['cogs.utility',
-                      'cogs.owner']
+                      'cogs.owner',
+                      'cogs.help']
 
 
-bot = commands.Bot(command_prefix='>', case_insensitive=True)
+bot = commands.Bot(command_prefix=config.bot_prefix, case_insensitive=True)
+bot.remove_command('help')
 
 if __name__ == '__main__':
     for extension in initial_extensions:
