@@ -98,7 +98,7 @@ class Owner_Cog(commands.Cog):
     @commands.command(name='smsg', hidden=True)
     @commands.is_owner()
     async def smessage(self, ctx, cnl,* , msg):
-        """mesage a channel"""
+        """message a channel"""
         channel = self.bot.get_channel(int(cnl))
         print(cnl, msg)
         await channel.send(msg)

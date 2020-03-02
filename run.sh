@@ -8,7 +8,7 @@ FAILS1=0
 while true
 do
   sleep 0.5
-  python3 /home/pi/NetwarBot/bot.py # your program
+  python3 bot.py # your program
   EXIT=$?
   ((FAILS++))
 
@@ -18,7 +18,7 @@ do
          while true
          do
               sleep 0.5
-              python3 /home/pi/NetwarBot/bot.py # your program
+              python3 bot.py # your program
               EXIT=$?
               ((FAILS1++))
               echo "[$(date) bot exited with code $EXIT. Restarting in 5 minutes"
