@@ -24,7 +24,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    activity = discord.Game(">help for commands")
+    activity = discord.Game("{}help for commands".format(config.bot_prefix))
     await bot.change_presence(status=discord.Status.online, activity=activity)
 
 
