@@ -29,6 +29,9 @@ async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
+    print("Servers:")
+    for item in bot.guilds:
+        print("  {}".format(item))
     print('------')
     activity = discord.Game("{}help for commands".format(config.bot_prefix))
     await bot.change_presence(status=discord.Status.online, activity=activity)

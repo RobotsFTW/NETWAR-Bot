@@ -11,7 +11,7 @@ import config
 prefix = config.bot_prefix
 bot_title = 'NEWTWAR-Bot'
 bot_description = 'Bot for NETWAR'
-bottom_info = ''
+bottom_info = 'The commands are NOT case sensitive.'
 
 class Help(commands.Cog):
     """ Help commands """
