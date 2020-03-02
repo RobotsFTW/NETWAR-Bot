@@ -6,10 +6,11 @@ sys.path.append("..") # Adds higher directory to python modules path.
 import config
 
 
+#checks to see if message as sent by the bot
 def is_me(m):
     return str(m.author.id) == config.bot_id
 
-
+#check if message is a command
 def is_com(m):
     return m.content.startswith(config.bot_prefix)
 
@@ -30,7 +31,8 @@ class Owner_Cog(commands.Cog):
         deleted1 = await channel.purge(limit=25, check=is_com)
         await ctx.send('Deleted {} command(s)\nDeleted {} message(s)'.format(len(deleted1), len(deleted)))
 
-
+    #restarts the bot, it jsut closes the connectiona dn relys on an .sh script to restart the python script
+    #kinda jank but it works
     @commands.command(description='Restarts Utility Bot')
     @commands.is_owner()
     async def restart(self, ctx):
@@ -39,7 +41,7 @@ class Owner_Cog(commands.Cog):
         await self.bot.logout()
 
 
-    # Hidden means it won't show up on the default help.
+    #loads a cog
     @commands.command(name='load', hidden=True)
     @commands.is_owner()
     async def c_load(self, ctx, *, cog: str):
@@ -53,7 +55,7 @@ class Owner_Cog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-
+    #unloads a cog
     @commands.command(name='unload', hidden=True)
     @commands.is_owner()
     async def c_unload(self, ctx, *, cog: str):
@@ -67,7 +69,7 @@ class Owner_Cog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-
+    #relaods a cog
     @commands.command(name='reload', hidden=True)
     @commands.is_owner()
     async def c_reload(self, ctx, *, cog: str):
@@ -81,6 +83,7 @@ class Owner_Cog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
+    #lists all the cogs that are currently loaded
     @commands.command(name='list', hidden=True)
     @commands.is_owner()
     async def c_list(self, ctx):
@@ -94,7 +97,7 @@ class Owner_Cog(commands.Cog):
         except Exception as e:
             await ctx.send(f'**`ERROR:`** {type(e).__name__} - {e}')
 
-
+    #message the server as the bot.
     @commands.command(name='smsg', hidden=True)
     @commands.is_owner()
     async def smessage(self, ctx, cnl,* , msg):
@@ -103,7 +106,7 @@ class Owner_Cog(commands.Cog):
         print(cnl, msg)
         await channel.send(msg)
 
-
+    #message a person as the bot
     @commands.command(name='pmsg', hidden=True)
     @commands.is_owner()
     async def pmessage(self, ctx, cnl,* , msg):
@@ -113,5 +116,6 @@ class Owner_Cog(commands.Cog):
         await user.send(msg)
 
 
+#add cogs to bot
 def setup(bot):
     bot.add_cog(Owner_Cog(bot))

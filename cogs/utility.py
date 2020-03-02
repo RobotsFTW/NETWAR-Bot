@@ -10,21 +10,21 @@ class Utility(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-
+    #provides information for netwar.
     @commands.command(description='Information for NETWAAR!!')
     async def netwar(self, ctx):
         """NETWAR Information"""
         today = datetime.datetime.today()
         d1 = datetime.datetime(2020, 3, 28, 10, 0, 0)
         d2 = d1 - today
-
+        #create embed
         netwar_info_embed = discord.Embed(
             color=0xff0000,
             description="Information for the NETWAR LAN party.",
             title="NETWAR Information"
         )
         netwar_info_embed.set_image(url="https://www.netwar.org/wp-content/uploads/2018/01/Netwar_Logo.png")
-        # name="\u200b" blank space character
+
         netwar_info_embed.add_field(
             name="Countdown", value="There is:\n" + str(d2) + " \nuntil Netwar!", inline=True
         )
@@ -36,7 +36,7 @@ class Utility(commands.Cog):
         )
         await ctx.send(embed=netwar_info_embed)
 
-
+    #says hello
     @commands.command(description="say hello to the user")
     async def greet(self, ctx):
         """Says Hello."""
@@ -58,9 +58,10 @@ class Utility(commands.Cog):
         # give users a link to invite thsi bot to their server
         embed.add_field(name="Invite", value="[Invite link](<Not available>)")
 
+        #adds github link for the bot
         embed.add_field(name="GitHub", value="https://github.com/RobotsFTW/NetwarBot")
         await ctx.send(embed=embed)
 
-
+#adds cog to bot
 def setup(bot):
     bot.add_cog(Utility(bot))
