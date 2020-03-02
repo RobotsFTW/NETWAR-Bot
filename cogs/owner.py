@@ -31,8 +31,8 @@ class Owner_Cog(commands.Cog):
         deleted1 = await channel.purge(limit=25, check=is_com)
         await ctx.send('Deleted {} command(s)\nDeleted {} message(s)'.format(len(deleted1), len(deleted)))
 
-    #restarts the bot, it jsut closes the connectiona dn relys on an .sh script to restart the python script
-    #kinda jank but it works
+    #restarts the bot, it just closes the connection and uses a .sh script to restart the python script.
+    #kinda jank but it works.
     @commands.command(description='Restarts Utility Bot')
     @commands.is_owner()
     async def restart(self, ctx):
@@ -69,7 +69,7 @@ class Owner_Cog(commands.Cog):
         else:
             await ctx.send('**`SUCCESS`**')
 
-    #relaods a cog
+    #reloads a cog
     @commands.command(name='reload', hidden=True)
     @commands.is_owner()
     async def c_reload(self, ctx, *, cog: str):

@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix=config.bot_prefix, case_insensitive=True)
 bot.remove_command('help')
 
 
-#laod cogs
+#load cogs
 if __name__ == '__main__':
     for extension in initial_extensions:
         bot.load_extension(extension)

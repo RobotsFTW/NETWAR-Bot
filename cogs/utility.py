@@ -43,7 +43,8 @@ class Utility(commands.Cog):
         await ctx.send(":smiley: :wave: Hello, there!")
 
 
-    #TODO add invite link
+    #TODO possibly add invite link
+    #shows info for the bot
     @commands.command(description="Get info about the Utlity Bot")
     async def info(self, ctx):
         """Shows bot information."""
