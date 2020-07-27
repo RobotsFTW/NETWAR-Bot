@@ -2,6 +2,7 @@ import discord
 import config
 from discord.ext import commands
 import config
+import datetime
 
 
 #cog list
@@ -41,6 +42,12 @@ async def on_ready():
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.send("error: {}".format(error))
+
+
+#prints when the bot has dropped connection to discord's api.
+@bot.event
+async def on_disconnect():
+    print("Disconnected: {}".format(datetime.datetime.now()))
 
 
 #run bot
